@@ -286,6 +286,9 @@ for:
     before_test:
       #- tools\appveyor\setup-sshd
       #- tools\appveyor\verify-ssh-access
+      - ps: '"abc" > C:\\Users\\appveyor\\Desktop\\BLOCK.txt'
+      - ps: Get-Command python.exe
+      - ps: 'dir env:'
 
     test_script:
       - hatch test --cover
